@@ -1,3 +1,6 @@
+#ifndef STACK_C
+#define STACK_C
+
 #include <stdlib.h>
 
 /*
@@ -17,7 +20,7 @@ StackNode* stack_node_create(void* value)
   return node;
 }
 
-void inline stack_node_delete(StackNode* node)
+void stack_node_delete(StackNode* node)
 {
   free(node->value);
   free(node);
@@ -88,3 +91,5 @@ int inline stack_is_empty(Stack* stack)
 {
   return (stack->root == NULL) ? 1 : 0;
 }
+
+#endif
